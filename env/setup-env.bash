@@ -30,5 +30,6 @@ export TIMELOOP_BASE_PATH=$(cd "$(dirname "${BASH_SOURCE[0]:-${(%):-%x}}")/.."; 
 # We should separate the following depending on which OS is running.
 # We should also create separate scripts for bash and zsh. At the moment this
 # script works with both shells.
-export LD_LIBRARY_PATH=$TIMELOOP_BASE_PATH/lib:$LD_LIBRARY_PATH
-export DYLD_FALLBACK_LIBRARY_PATH=$TIMELOOP_BASE_PATH/lib:$DYLD_FALLBACK_LIBRARY_PATH
+export LD_LIBRARY_PATH=$TIMELOOP_BASE_PATH/lib:/usr/local/lib/:$LD_LIBRARY_PATH
+export DYLD_FALLBACK_LIBRARY_PATH=$TIMELOOP_BASE_PATH/lib:/usr/local/lib/:$DYLD_FALLBACK_LIBRARY_PATH
+export PATH=$TIMELOOP_BASE_PATH/bin:$PATH
